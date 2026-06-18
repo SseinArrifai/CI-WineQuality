@@ -390,10 +390,22 @@ elif menu == "Predict Wine Quality":
         input_data["citric acid"] = st.number_input("Citric Acid", value=0.00, format="%.2f")
         input_data["residual sugar"] = st.number_input("Residual Sugar", value=1.90, format="%.2f")
         input_data["chlorides"] = st.number_input("Chlorides", value=0.076, format="%.3f")
-        input_data["free sulfur dioxide"] = st.number_input("Free Sulfur Dioxide", value=11.0, format="%.1f")
+        input_data["free sulfur dioxide"] = st.number_input(
+            "Free Sulfur Dioxide",
+            min_value=0.0,
+            value=11.0,
+            step=1.0,
+            format="%.1f"
+        )
 
     with col2:
-        input_data["total sulfur dioxide"] = st.number_input("Total Sulfur Dioxide", value=34.0, format="%.1f")
+        input_data["total sulfur dioxide"] = st.number_input(
+            "Total Sulfur Dioxide",
+            min_value=0.0,
+            value=34.0,
+            step=1.0,
+            format="%.1f"
+        )
         input_data["density"] = st.number_input("Density", value=0.9978, format="%.4f")
         input_data["pH"] = st.number_input("pH", value=3.51, format="%.2f")
         input_data["sulphates"] = st.number_input("Sulphates", value=0.56, format="%.2f")
